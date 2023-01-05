@@ -1,0 +1,578 @@
+@font-face {
+	font-family: 'Visby Round CF';
+	src: url('fonts/VisbyRoundCF-DemiBold.eot');
+	src: url('fonts/VisbyRoundCF-DemiBold.woff2');
+	src: url('fonts/VisbyRoundCF-DemiBold.woff');
+	font-weight: normal;
+}
+
+@font-face {
+	font-family: 'Visby Round CF';
+	src: url('fonts/VisbyRoundCF-ExtraBold.eot');
+	src: url('fonts/VisbyRoundCF-ExtraBold.woff2');
+	src: url('fonts/VisbyRoundCF-ExtraBold.woff');
+	font-weight: bold;
+}
+
+body {
+	background-color: #000;
+	margin: 0;
+}
+
+@keyframes shake {
+	0% {
+		transform: rotateZ(0deg);
+	}
+
+	4% {
+		transform: rotateZ(5deg);
+	}
+
+	13% {
+		transform: rotateZ(-3deg);
+	}
+
+	30% {
+		transform: rotateZ(1.3deg);
+	}
+
+	45% {
+		transform: rotateZ(-0.5deg);
+	}
+
+	80% {
+		transform: rotateZ(0.2deg);
+	}
+
+	100% {
+		transform: rotateZ(0deg);
+	}
+}
+
+@keyframes softshake {
+	0% {
+		transform: rotateZ(3deg);
+	}
+
+	4% {
+		transform: rotateZ(1deg);
+	}
+
+	13% {
+		transform: rotateZ(-0.7deg);
+	}
+
+	30% {
+		transform: rotateZ(0.4deg);
+	}
+
+	45% {
+		transform: rotateZ(-0.2deg);
+	}
+
+	80% {
+		transform: rotateZ(0.08deg);
+	}
+
+	100% {
+		transform: rotateZ(0deg);
+	}
+}
+
+@keyframes messagesBorderFade {
+	0% {
+		transform: rotateZ(2deg);
+	}
+
+	4% {
+		transform: rotateZ(1deg);
+	}
+}
+
+
+
+.canvas {
+	width: 100%;
+	height: auto;
+	margin: 0;
+	position: fixed;
+	z-index: -100;
+}
+
+.logo {
+	width: 70pt;
+	text-align: center;
+	max-height: 100pt;
+}
+
+.logo:hover {
+	animation: softshake 1s forwards;
+}
+
+.logoLink {
+	width: 50pt;
+	position: absolute;
+	top: 10pt;
+	left: 10pt;
+	max-height: 50pt;
+}
+
+.logoLink:hover {
+	animation: softshake 1s forwards;
+}
+
+.selfie:hover {
+	transform: rotate(2deg);
+	transition: 0.1s transform ease-in;
+}
+
+.bio {
+	min-width: 250pt;
+	padding: 40pt;
+	padding-top: 20pt;
+	padding-bottom: 10pt;
+	text-align: center;
+	font-family: 'Visby Round CF', sans-serif;
+	font-size: 16pt;
+	letter-spacing: 0.5pt;
+	color: #c3d0e5;
+	font-weight: bold;
+	border-radius: 150pt;
+	margin-left: auto;
+	margin-right: auto;
+	line-height: 22pt;
+}
+
+.bio a {
+	display: inline-block;
+	padding-top: 5pt;
+	text-decoration: none;
+	color: #8C3BFF;
+	transition: 0.2s color ease-in;
+	font-weight: normal;
+}
+
+.bio a:hover {
+	color: #63DCFF;
+	transition: 0.2s color ease-in;
+}
+
+.navbox {
+	min-width: 400pt;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
+.navbox img {
+	width: 50pt;
+	padding: 2pt;
+	margin-top: 18pt;
+	margin-left: 2pt;
+	transition: transform 0.1s ease-in;
+}
+
+.navbox img:hover {
+	transition: transform 0.1s ease-in;
+	transform: scale(1.1, 1.1);
+}
+
+.pageContainer {
+	text-align: center;
+	height: auto;
+	padding-left: 10%;
+	padding-right: 10%;
+	padding-top: 240pt;
+	min-width: 400pt;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 200pt;
+}
+
+.about {
+	text-align: center;
+	height: auto;
+	padding-left: 10%;
+	padding-right: 10%;
+	padding-top: 240pt;
+	min-width: 400pt;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.selfie {
+	display: inline-block;
+	border-radius: 20pt;
+	width: 50%;
+	max-width: 300pt;
+	min-width: 230pt;
+	height: auto;
+	min-height: 320pt;
+	max-height: 500pt;
+	margin-top: -100pt;
+	transform: rotate(4deg);
+	background-image: url(images/thumbs/me.gif);
+	background-size: cover;
+	transition: transform 0.1s ease-in;
+}
+
+.about p {
+	text-align: left;
+	min-width: 250pt;
+	max-width: 350pt;
+	font-family: 'Visby Round CF', sans-serif;
+	font-size: 16pt;
+	letter-spacing: 0.5pt;
+	color: #637AB0;
+	font-weight: normal;
+	border-radius: 150pt;
+	margin-left: auto;
+	margin-right: auto;
+	line-height: 22pt;
+	orphans: 3;
+}
+
+p a {
+	display: inline-block;
+	text-decoration: none;
+	color: #8C3BFF;
+	transition: 0.2s color ease-in;
+	font-weight: bold;
+}
+
+p a:hover {
+	color: #63DCFF;
+	transition: 0.2s color ease-in;
+}
+
+
+.sticker {
+	position: absolute;
+	width: 90pt;
+	height: 90pt;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+}
+
+
+/*  Entries  */
+
+
+.entryBox {
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #FAFCFF;
+	margin-top: 35pt;
+	border-radius: 24pt;
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+	z-index: 1;
+	min-width: 400pt;
+	transition: transform 0.5s ease;
+	text-align: center;
+	box-sizing: border-box;
+}
+
+.entryBox:hover {
+	cursor: pointer;
+}
+
+.entryBox img {
+	margin-left: -50%;
+}
+
+.wide {
+	width: 96%;
+	max-width: 650pt;
+	height: 250pt;
+}
+
+.medium {
+	width: 400pt;
+	height: 400pt;
+}
+
+.small {
+	width: 250pt;
+	height: 405pt;
+}
+
+.large {
+	width: 600pt;
+	height: 400pt;
+}
+
+.tiny {
+	width: 125pt;
+	height: 125pt;
+}
+
+.pushback {
+	position: absolute;
+	top: -30pt;
+	left: 13pt;
+	z-index: -10;
+	transform: rotate(3deg) translate(-12pt, -5pt);
+}
+
+.pushback:hover {
+	transform: rotate(5deg) translate(-12pt, -5pt);
+	transition: transform 0.2s cubic-bezier(.05, .7, .31, .99);
+
+}
+
+
+.wide img {
+	width: 100%;
+	height: auto;
+	position: absolute;
+	overflow: hidden;
+	border-radius: 24pt;
+}
+
+.rotation1 {
+	transform: rotate(1deg);
+	transition: transform 0.1s ease;
+}
+
+.rotation2 {
+	transform: rotate(-2deg);
+	transition: transform 0.1s ease;
+}
+
+.rotation3 {
+	transform: rotate(-1.4deg);
+	transition: transform 0.1s ease;
+}
+
+.rotation4 {
+	transform: rotate(3deg);
+	transition: transform 0.1s ease;
+}
+
+.rotation5 {
+	transform: rotate(-2.8deg);
+	transition: transform 0.1s ease;
+}
+
+.rotation6 {
+	transform: rotate(2deg);
+	transition: transform 0.1s ease;
+}
+
+.rotation1:hover {
+	transform: rotate(0deg) scale(1.05, 1.05);
+	transition: transform 0.1s ease;
+}
+
+.rotation2:hover {
+	transform: rotate(0deg) scale(1.05, 1.05);
+	transition: transform 0.1s ease;
+}
+
+.rotation3:hover {
+	transform: rotate(0deg) scale(1.05, 1.05);
+	transition: transform 0.1s ease;
+}
+
+.rotation4:hover {
+	transform: rotate(0deg) scale(1.05, 1.05);
+	transition: transform 0.1s ease;
+}
+
+.rotation5:hover {
+	transform: rotate(0deg) scale(1.05, 1.05);
+	transition: transform 0.1s ease;
+}
+
+.rotation6:hover {
+	transform: rotate(0deg) scale(1.05, 1.05);
+	transition: transform 0.1s ease;
+}
+
+.entryLabel {
+	position: relative;
+	display: inline-block;
+	width: auto;
+	top: 15%;
+	left: 100%;
+	transform: translate(-80%, -20pt) rotate(-2deg);
+	text-align: center;
+	font-family: "Greycliff CF";
+	font-size: 16pt;
+	font-weight: bold;
+	color: #747B89;
+	background-color: #f8f9fd;
+	border: 2pt white solid;
+	border-radius: 80pt;
+	padding: 10pt 20pt 10pt 20pt;
+}
+
+.entryIcon {
+	position: relative;
+	width: 90pt;
+	height: 90pt;
+	top: -1%;
+	left: 10%;
+	transform: translate(-80%, -20pt) rotate(-7deg);
+	border-radius: 25pt;
+	background-size: 100%;
+	background-position: center center;
+	border: 2pt solid #240970;
+	box-shadow: rgba(30, 30, 150, 0.1) 0pt 5pt 10pt;
+	transition: border 1s ease;
+	cursor: pointer;
+}
+
+.messages {
+	position: relative;
+	width: 90pt;
+	height: 63pt;
+	top: -1%;
+	left: 10%;
+	transform: translate(-80%, -20pt) rotate(4deg);
+	background-size: 100%;
+	background-position: center center;
+	border: 2pt solid #240970;
+	box-shadow: rgba(30, 30, 150, 0.1) 0pt 5pt 10pt;
+	transition: border 1s ease;
+	border-radius: 33pt;
+	cursor: pointer;
+}
+
+.messages:hover {
+	border: 2pt solid #006fff;
+	transition: border 0.3s ease;
+	cursor: pointer;
+}
+
+.entryIcon:hover {
+	border: 2pt solid #00e868;
+	transition: border 0.3s ease;
+	cursor: pointer;
+}
+
+.secondaryEntry {
+	margin-top: 75pt;
+	margin-left: auto;
+	margin-right: auto;
+	min-width: 360pt;
+	max-width: 360pt;
+	min-height: 300pt;
+	max-height: 360pt;
+	height: 360pt;
+	text-align: left;
+	overflow: visible;
+	display: inline-block;
+	cursor: pointer;
+
+}
+
+.secondaryEntry img {
+	display: inline-block;
+	border-radius: 22pt;
+	width: 92%;
+	height: auto;
+	margin-top: 14pt;
+}
+
+.interiorThumb {
+	margin-top: 13pt;
+	width: 94%;
+	height: 94%;
+	min-height: 200pt;
+	border-radius: 22pt;
+	background-position: center center;
+	background-size: cover;
+	margin-bottom: 30pt;
+}
+
+
+.title {
+	font-family: 'Visby Round CF', sans-serif;
+	font-size: 15pt;
+	color: #637AB0;
+	font-weight: bold;
+}
+
+.subtitle {
+	display: inline-block;
+	margin-top: 3pt;
+	font-size: 10pt;
+	text-transform: uppercase;
+	letter-spacing: 2pt;
+}
+
+.secondaryContainer {
+	margin-left: 20pt;
+	width: 100%;
+	height: auto;
+	cursor: pointer;
+}
+
+.planetoneOverlay {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+
+#contentOverlay {
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	overflow-y: scroll;
+	background-color: rgba(0, 0, 0, 0.9);
+	z-index: 200;
+	animation: fade 0.5s ease-in;
+	animation-fill-mode: forwards;
+	text-align: center;
+	padding-top: 200pt;
+	padding-left: 10%;
+	padding-right: 10%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+
+
+@keyframes fade {
+	0% {
+		background-color: rgba(0, 0, 0, 0);
+	}
+
+	100% {
+		background-color: rgba(0, 0, 0, 0.9);
+	}
+
+}
+
+.particleToggle {
+	font-family: 'Visby Round CF', sans-serif;
+	font-size: 10pt;
+	font-weight: bold;
+	text-transform: uppercase;
+	background-color: transparent;
+	padding: 5pt;
+	padding-left: 8pt;
+	padding-right: 8pt;
+	color: #3D4B67;
+	border: 1.3pt solid #3D4B67;
+	display: block;
+	top: 10pt;
+	left: 10pt;
+	width: auto;
+	position: fixed;
+	border-radius: 10pt;
+	letter-spacing: 2;
+	cursor: pointer;
+	user-select: none;
+}
