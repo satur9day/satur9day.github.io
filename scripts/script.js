@@ -1,4 +1,4 @@
-/* Make the text "satur9day" in black, with a green glow. Have it spin around the screen in 3d. */
+/* */
 var satur9day = document.createElement('a');
 satur9day.href = '/index.html'
 satur9day.innerHTML = 'satur9day';
@@ -7,6 +7,7 @@ satur9day.id = 'av';
 satur9day.style.textDecoration = 'none';
 satur9day.style.textShadow = '0 0 20px #fff, 0 0 30px #421CC7, 0 0 40px #421CC7, 0 0 50px #421CC7, 0 0 60px #421CC7, 0 0 70px #421CC7, 0 0 80px #421CC7';
 satur9day.style.position = 'absolute';
+satur9day.style.zIndex = '1';
 satur9day.style.top = '25%';
 satur9day.style.left = '50%';
 satur9day.style.transform = 'translate(-50%, -50%) rotateX(0deg) rotateY(0deg) rotateZ(0deg)';
@@ -157,26 +158,20 @@ function Particle() {
     this.x = Math.random() * W;
     this.y = Math.random() * H;
 
+    // This controls the horizontal velocity of particles; keeping it random for some variation.
+    this.vx = (Math.random() - 0.5) * 0.5;
 
-
-    this.vx = Math.random() / 2;
-    this.vy = -3 * Math.random() - 2;
-
+    // Vertical velocity; negative value to move upwards. Adjust this value to control speed.
+    this.vy = -1.5;
 
     this.radius = remap(Math.random(), 0, 1, 1, 4);
 
-
     this.draw = function () {
-
-        //var value1 = '#3E96FF';
-        //var value2 = '#64D3FF';
-        //var chosenValue = Math.random() >= 0.5 ? value1 : value2;
 
         ctx.fillStyle = currentParticles[getRandomInt(9)];
 
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
-
         ctx.fill();
     }
 }
@@ -209,26 +204,6 @@ function remap(value, low1, high1, low2, high2) {
     return low2 + (high2 - low2) * (value - low1) / (high1 - low1);
 }
 
-var cursorX;
-var cursorY;
-var deltaY = 0;
-document.onmousemove = function (e) {
-    cursorX = e.clientX;
-    cursorY = e.clientY;
-    checkCursor();
-}
-
-
-function checkCursor() {
-    offset = remap(cursorX, 0, canvas.width / 2, -20, 5);
-
-    if (cursorY > canvas.height) {
-        cursorY = canvas.height;
-    }
-    offsetY = remap(cursorY, 0, canvas.height, -2, 5) - 1;
-
-}
-
 
 // Give every particle some life
 function update() {
@@ -236,35 +211,15 @@ function update() {
     for (var i = 0; i < particles.length; i++) {
         p = particles[i];
 
-        // Change the velocities
+        // Update particle's position based on its velocity.
+        p.x += p.vx;
+        p.y += p.vy;
 
-        p.x += (p.vx + offset) / 2 * (Math.sin(p.vx)) + 3;
-        //p.x = (p.x + offset/2); 
-        p.y += (((p.vy / 4) + offsetY) * ((Math.sin(p.vy) + 1.2)));
-        //p.y += (p.vy*2 + offsetY);
-
-
-        // wait come back lil particle
-
-        if (p.x + p.radius > W)
-            p.x = p.radius;
-
-        else if (p.x - p.radius < 0) {
-            p.x = W - p.radius;
+        // If the particle goes beyond the canvas boundaries, reposition it to the bottom.
+        if (p.y < -10) {
+            p.y = H + 10;
+            p.x = Math.random() * W;
         }
-
-        if (p.y + p.radius > H)
-            p.y = p.radius;
-
-        else if (p.y - p.radius < 0) {
-            p.y = H - p.radius;
-        }
-
-        //	for(var j = i + 1; j < particles.length; j++) {
-        //		p2 = particles[j];
-        //		distance(p, p2);
-        //	}
-
     }
 }
 /*

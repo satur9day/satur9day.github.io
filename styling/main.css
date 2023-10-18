@@ -90,6 +90,9 @@ body {
 }
 
 
+br {
+	user-select: none;
+}
 
 .canvas {
 	width: 100%;
@@ -187,6 +190,8 @@ body {
 	margin-left: auto;
 	margin-right: auto;
 	margin-bottom: 200pt;
+	position: relative;
+	z-index: 2;
 }
 
 .about {
